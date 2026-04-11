@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MarshallZZZ</title>
+    <title>MarshallZZZ — Projects</title>
     <meta
       name="description"
-      content="Marshall explores AI, workflows, and practical tools for the future."
+      content="Marshall's projects, experiments, and teaching materials."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,106 +17,50 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="page-shell">
+    <div class="site-shell">
       <header class="topbar">
-        <div class="brand">marshallzzz.com</div>
+        <a class="brand" href="./index.html">marshallzzz.com</a>
         <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#focus">Focus</a>
-          <a href="#next">Next</a>
+          <a href="#projects">Projects</a>
+          <a href="./project-about.html">About Me</a>
+          <a href="./project-ai-workflows.html">Project 1</a>
         </nav>
       </header>
 
       <main>
-        <section class="hero">
-          <div class="hero-copy">
-            <p class="eyebrow">Personal site · version 1</p>
-            <h1>Marshall</h1>
-            <p class="subtitle">
-              Exploring AI, workflows, and practical tools for the future.
-            </p>
-            <p class="intro">
-              I’m learning how to use AI to work better, think clearly, and build
-              useful things.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#about">Get to know me</a>
-              <a class="button secondary" href="#next">See what’s next</a>
-            </div>
-          </div>
-
-          <div class="hero-card">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <p class="card-label">Current direction</p>
-              <ul>
-                <li>Learning AI in a practical way</li>
-                <li>Designing useful workflows</li>
-                <li>Turning ideas into real projects</li>
-              </ul>
-            </div>
+        <section class="hero hero-home minimal-hero">
+          <div class="hero-copy narrow">
+            <p class="eyebrow">Portfolio</p>
+            <h1>Marshall's Projects</h1>
           </div>
         </section>
 
-        <section id="about" class="section two-column">
-          <div>
-            <p class="section-tag">About</p>
-            <h2>A calm place to build in public.</h2>
-          </div>
-          <div>
-            <p>
-              This site is my starting point on the web. Right now it is simple by
-              design: a small home for who I am, what I’m exploring, and the work
-              I want to grow into over time.
-            </p>
-            <p>
-              I’m especially interested in how AI can help people learn faster,
-              work more clearly, and turn messy information into something useful.
-            </p>
-          </div>
-        </section>
-
-        <section id="focus" class="section cards-section">
-          <div class="section-heading">
-            <p class="section-tag">Focus</p>
-            <h2>What I’m exploring</h2>
-          </div>
-
-          <div class="cards">
-            <article class="info-card">
-              <h3>AI workflows</h3>
+        <section id="projects" class="section projects-only">
+          <div class="project-grid">
+            <a class="project-card featured image-card card-whole-link" href="./project-about.html" aria-label="Open About Me project">
+              <span class="card-image-link">
+                <img src="./assets/about-visual.svg" alt="Abstract profile illustration for the About Me project" />
+              </span>
+              <span class="project-meta">Project 0</span>
+              <h3>About Me</h3>
               <p>
-                Finding practical ways to use AI beyond chat — especially for
-                research, organization, and execution.
+                A short introduction to who I am, what I care about, and what I
+                want this site to become.
               </p>
-            </article>
+            </a>
 
-            <article class="info-card">
-              <h3>Clear thinking</h3>
+            <a class="project-card image-card card-whole-link" href="./project-ai-workflows.html" aria-label="Open AI Workflows project">
+              <span class="card-image-link">
+                <img src="./assets/ai-workflows-visual.svg" alt="Abstract workflow illustration for the AI teaching project" />
+              </span>
+              <span class="project-meta">Project 1</span>
+              <h3>AI Workflows for Research and Presentations</h3>
               <p>
-                Using tools and structured processes to understand information,
-                reduce noise, and make better decisions.
+                A teaching project for teenagers about moving from good source
+                material to structured summaries and presentation outlines.
               </p>
-            </article>
-
-            <article class="info-card">
-              <h3>Useful things</h3>
-              <p>
-                Building small systems, experiments, and digital projects that are
-                actually worth using.
-              </p>
-            </article>
+            </a>
           </div>
-        </section>
-
-        <section id="next" class="section next-step">
-          <p class="section-tag">Next</p>
-          <h2>This is just the first version.</h2>
-          <p>
-            More sections can come later — projects, writing, media, and other
-            experiments. For now, this page is meant to be clean, readable, and
-            easy to grow.
-          </p>
         </section>
       </main>
     </div>
