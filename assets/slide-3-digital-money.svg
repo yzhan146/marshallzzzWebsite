@@ -1,0 +1,23 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#F5F7FB"/>
+  <rect x="56" y="56" width="1488" height="788" rx="36" fill="white" stroke="#D7E0F0" stroke-width="4"/>
+  <text x="110" y="150" fill="#2563EB" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">SLIDE 3 · GROWTH LOGIC</text>
+  <text x="110" y="250" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="800">Why Hong Kong's Fund Industry Could Benefit</text>
+  <circle cx="800" cy="500" r="120" fill="#DBEAFE" stroke="#60A5FA" stroke-width="4"/>
+  <text x="725" y="490" fill="#1D4ED8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">Hong Kong</text>
+  <text x="722" y="530" fill="#1D4ED8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">Fund Industry</text>
+  <rect x="180" y="390" width="280" height="140" rx="24" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="225" y="455" fill="#1E3A8A" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">Settlement</text>
+  <text x="225" y="492" fill="#1E3A8A" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">Efficiency</text>
+  <rect x="1140" y="390" width="280" height="140" rx="24" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <text x="1185" y="455" fill="#4338CA" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">Programmable</text>
+  <text x="1185" y="492" fill="#4338CA" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">Transactions</text>
+  <rect x="660" y="650" width="280" height="120" rx="24" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="705" y="705" fill="#047857" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">Institutional +</text>
+  <text x="705" y="742" fill="#047857" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">Policy Support</text>
+  <path d="M460 460L650 490" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M1140 460L950 490" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M800 620L800 650" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <rect x="1260" y="710" width="180" height="70" rx="18" fill="#1D4ED8"/>
+  <text x="1310" y="755" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Slide 3</text>
+</svg>

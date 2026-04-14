@@ -1,0 +1,25 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#F5F7FB"/>
+  <rect x="56" y="56" width="1488" height="788" rx="36" fill="white" stroke="#D7E0F0" stroke-width="4"/>
+  <text x="110" y="150" fill="#2563EB" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">SLIDE 2 · WHY DIGITAL MONEY MATTERS</text>
+  <text x="110" y="250" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800">Why Digital Money Matters</text>
+  <rect x="110" y="330" width="420" height="330" rx="28" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <rect x="590" y="330" width="420" height="330" rx="28" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <rect x="1070" y="330" width="420" height="330" rx="28" fill="#ECFEFF" stroke="#A5F3FC"/>
+  <text x="155" y="405" fill="#1E3A8A" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">Physical</text>
+  <text x="155" y="447" fill="#1E3A8A" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">Money</text>
+  <text x="155" y="520" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="26">Cash-based systems</text>
+  <text x="155" y="555" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="26">Direct physical transfer</text>
+  <text x="635" y="405" fill="#3730A3" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">Electronic</text>
+  <text x="635" y="447" fill="#3730A3" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">Money</text>
+  <text x="635" y="520" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="26">Bank accounts &amp; rails</text>
+  <text x="635" y="555" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="26">Faster but centralized</text>
+  <text x="1115" y="405" fill="#0F766E" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">On-chain</text>
+  <text x="1115" y="447" fill="#0F766E" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">Money</text>
+  <text x="1115" y="520" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="26">Programmable transfer</text>
+  <text x="1115" y="555" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="26">New settlement design</text>
+  <path d="M530 490H570" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1010 490H1050" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <rect x="1260" y="710" width="180" height="70" rx="18" fill="#1D4ED8"/>
+  <text x="1310" y="755" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Slide 2</text>
+</svg>

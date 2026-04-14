@@ -1,0 +1,16 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#F5F7FB"/>
+  <rect x="56" y="56" width="1488" height="788" rx="36" fill="#0F172A"/>
+  <circle cx="1310" cy="220" r="170" fill="#2563EB" fill-opacity="0.18"/>
+  <circle cx="1430" cy="130" r="90" fill="#60A5FA" fill-opacity="0.18"/>
+  <text x="110" y="170" fill="#93C5FD" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">PROJECT 1 · SAMPLE DECK</text>
+  <text x="110" y="300" fill="white" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">Digital Money and</text>
+  <text x="110" y="390" fill="white" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">Hong Kong's Fund Industry</text>
+  <text x="110" y="470" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="32">How digital money, tokenized assets, and new settlement</text>
+  <text x="110" y="515" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="32">infrastructure could reshape fund operations</text>
+  <rect x="110" y="610" width="420" height="94" rx="24" fill="#111C34" stroke="#334155"/>
+  <text x="145" y="665" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="600">Digital money → tokenized assets</text>
+  <text x="145" y="700" fill="#93C5FD" font-family="Inter, Arial, sans-serif" font-size="26">→ fund industry impact</text>
+  <rect x="1260" y="640" width="180" height="70" rx="18" fill="#1D4ED8"/>
+  <text x="1310" y="685" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Slide 1</text>
+</svg>
