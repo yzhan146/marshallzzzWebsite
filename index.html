@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MarshallZZZ — Projects</title>
+    <title>Marshall Zhang — The Explorer</title>
     <meta
       name="description"
-      content="Marshall's projects, experiments, and teaching materials."
+      content="Personal website of Marshall Zhang, a product-minded data and AI practitioner exploring work, technology, teaching, and life."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -19,50 +19,318 @@
   <body>
     <div class="site-shell">
       <header class="topbar">
-        <a class="brand" href="./index.html">marshallzzz.com</a>
-        <nav class="nav">
-          <a href="#projects">Projects</a>
-          <a href="./project-about.html">About Me</a>
-          <a href="./project-ai-workflows.html">Project 1</a>
+        <a class="brand" href="./index.html" aria-label="Marshall Zhang home">
+          <span class="brand-mark">MZ</span>
+          <span>
+            <span class="lang-content lang-zh">Marshall - 拥抱变化</span>
+            <span class="lang-content lang-en">Marshall - Embrace Change</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <button class="language-toggle" type="button" data-language-toggle>English</button>
         </nav>
       </header>
 
       <main>
-        <section class="hero hero-home minimal-hero">
-          <div class="hero-copy narrow">
-            <p class="eyebrow">Portfolio</p>
-            <h1>Marshall's Projects</h1>
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <h1>
+              <span class="lang-content lang-zh">我是Marshall，一个用AI重塑产品工作的产品经理。</span>
+              <span class="lang-content lang-en">I am Marshall, a product manager reshaping product work with AI.</span>
+            </h1>
+            <p class="subtitle">
+              <span class="lang-content lang-zh">
+                我关心数据、AI、产品和真实世界的工作流。这个网站不只是简历，而是一个更完整的入口：专业能力、思考方式、经历沉淀，以及我对生活的热爱。
+              </span>
+              <span class="lang-content lang-en">
+                I care about data, AI, products, and real-world workflows. This site is not only a resume; it is a fuller entry point into my skills, thinking, experience, and love for life.
+              </span>
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#career">
+                <span class="lang-content lang-zh">查看职业路径</span>
+                <span class="lang-content lang-en">View career path</span>
+              </a>
+              <a class="button secondary" href="#contact">
+                <span class="lang-content lang-zh">联系我</span>
+                <span class="lang-content lang-en">Contact me</span>
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Marshall profile summary">
+            <div class="orbital-card photo-card">
+              <div class="profile-copy">
+                <p class="panel-kicker">Marshall Zhang</p>
+                <p class="panel-title">
+                  <span class="lang-content lang-zh">理性，协作，结果导向。</span>
+                  <span class="lang-content lang-en">Analytical, collaborative, impact-driven.</span>
+                </p>
+              </div>
+              <figure class="profile-photo-frame">
+                <img src="./assets/photo-soft.jpg" alt="Portrait of Marshall Zhang" />
+              </figure>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <p class="section-tag">
+              <span class="lang-content lang-zh">职业经历</span>
+              <span class="lang-content lang-en">Career experience</span>
+            </p>
+            <h2>
+              <span class="lang-content lang-zh">从工程到产品的成长路径。</span>
+              <span class="lang-content lang-en">A path from engineering to product.</span>
+            </h2>
+          </div>
+
+          <div class="career-card" id="career">
+            <div class="career-intro">
+              <p class="project-meta">
+                <span class="lang-content lang-zh">Career path</span>
+                <span class="lang-content lang-en">Career path</span>
+              </p>
+              <h3>
+                <span class="lang-content lang-zh">具工程背景的产品经理，专注数据平台、作业执行与监控体验。</span>
+                <span class="lang-content lang-en">A product manager with an engineering background, focused on data platforms, job execution, and monitoring experiences.</span>
+              </h3>
+              <p>
+                <span class="lang-content lang-zh">
+                  我的经历从 Hadoop、数据安全和基础设施工程开始，逐步进入 Azure Synapse 与 Microsoft Fabric 的平台体验设计。现在我更关注如何把复杂的执行、监控、调度和身份系统，转化为用户可理解、可依赖、可规模化的产品能力。
+                </span>
+                <span class="lang-content lang-en">
+                  My path started with Hadoop, data security, and infrastructure engineering, then moved into platform experiences across Azure Synapse and Microsoft Fabric. Today I focus on turning complex execution, monitoring, scheduling, and identity systems into product capabilities users can understand, trust, and scale.
+                </span>
+              </p>
+            </div>
+
+            <div class="career-group">
+              <p class="career-group-label">
+                <span class="lang-content lang-zh">工作经历</span>
+                <span class="lang-content lang-en">Experience</span>
+              </p>
+
+              <div class="experience-list">
+                <article class="experience-item">
+                  <div class="experience-time">2022 - Now</div>
+                  <div class="experience-content">
+                    <p class="experience-meta">
+                      <span class="lang-content lang-zh">微软 · 北京</span>
+                      <span class="lang-content lang-en">Microsoft · Beijing</span>
+                    </p>
+                    <h4>
+                      <span class="lang-content lang-zh">项目经理 · Microsoft Fabric</span>
+                      <span class="lang-content lang-en">Program Manager · Microsoft Fabric</span>
+                    </h4>
+                    <p>
+                      <span class="lang-content lang-zh">负责 Fabric 端到端 Job Execution Platform 的关键体验，包括 Monitoring Hub、通知系统、Job Scheduler、Run-as Identity、调度架构和执行扩展性。推动 Monitoring Hub 成为集中的作业可观测入口，达到 400K+ MAU，约占 Fabric MAU 的 80%。</span>
+                      <span class="lang-content lang-en">Owns key experiences for Fabric's end-to-end Job Execution Platform, including Monitoring Hub, notifications, Job Scheduler, Run-as Identity, scheduling architecture, and execution scalability. Drove Monitoring Hub into a centralized job observability surface, reaching 400K+ MAU, about 80% of Fabric MAU.</span>
+                    </p>
+                    <div class="chip-row">
+                      <span>Monitoring Hub</span>
+                      <span>Job Scheduler</span>
+                      <span>Run-as Identity</span>
+                      <span>Observability</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="experience-item">
+                  <div class="experience-time">2021 - 2022</div>
+                  <div class="experience-content">
+                    <p class="experience-meta">
+                      <span class="lang-content lang-zh">微软 · 北京</span>
+                      <span class="lang-content lang-en">Microsoft · Beijing</span>
+                    </p>
+                    <h4>
+                      <span class="lang-content lang-zh">前端工程师 · Fabric Intelligent Platform UI</span>
+                      <span class="lang-content lang-en">Frontend Engineer · Fabric Intelligent Platform UI</span>
+                    </h4>
+                    <p>
+                      <span class="lang-content lang-zh">参与 Fabric intelligent platform UI 建设，主要负责 Homepage 和 Playground，推动高质量 UI 框架、E2E 测试、无障碍和单元测试。</span>
+                      <span class="lang-content lang-en">Worked on Fabric intelligent platform UI, mainly Homepage and Playground, with focus on high-quality UI framework, E2E tests, accessibility, and unit tests.</span>
+                    </p>
+                    <div class="chip-row">
+                      <span>React</span>
+                      <span>TypeScript</span>
+                      <span>Accessibility</span>
+                      <span>E2E</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="experience-item">
+                  <div class="experience-time">2020 - 2021</div>
+                  <div class="experience-content">
+                    <p class="experience-meta">
+                      <span class="lang-content lang-zh">微软 · 北京</span>
+                      <span class="lang-content lang-en">Microsoft · Beijing</span>
+                    </p>
+                    <h4>
+                      <span class="lang-content lang-zh">前端工程师 · Azure Streaming on Synapse</span>
+                      <span class="lang-content lang-en">Frontend Engineer · Azure Streaming on Synapse</span>
+                    </h4>
+                    <p>
+                      <span class="lang-content lang-zh">负责 Azure Streaming Service 在 Azure Synapse 平台上的 UI 集成，构建 DAG 式体验来可视化 streaming jobs。</span>
+                      <span class="lang-content lang-en">Integrated Azure Streaming Service UI into Azure Synapse and built a DAG-like experience to visualize streaming jobs.</span>
+                    </p>
+                    <div class="chip-row">
+                      <span>Angular</span>
+                      <span>TypeScript</span>
+                      <span>C#</span>
+                      <span>DAG UX</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="experience-item">
+                  <div class="experience-time">2019 - 2020</div>
+                  <div class="experience-content">
+                    <p class="experience-meta">
+                      <span class="lang-content lang-zh">微软 · Redmond</span>
+                      <span class="lang-content lang-en">Microsoft · Redmond</span>
+                    </p>
+                    <h4>
+                      <span class="lang-content lang-zh">后端 / 基础设施工程师 · HDInsight</span>
+                      <span class="lang-content lang-en">Backend / Infrastructure Engineer · HDInsight</span>
+                    </h4>
+                    <p>
+                      <span class="lang-content lang-zh">负责 HDInsight Hadoop core service 的版本管理、开源产品支持、日志、作业队列和 DRI/on-call，深入接触分布式系统与企业级数据平台基础设施。</span>
+                      <span class="lang-content lang-en">Worked on HDInsight Hadoop core service, including versioning, open-source support, logs, job queue, and DRI/on-call, building hands-on experience with distributed systems and enterprise data platform infrastructure.</span>
+                    </p>
+                    <div class="chip-row">
+                      <span>Hadoop</span>
+                      <span>Hive</span>
+                      <span>YARN</span>
+                      <span>Distributed Systems</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="experience-item">
+                  <div class="experience-time">2015 - 2018</div>
+                  <div class="experience-content">
+                    <p class="experience-meta">
+                      <span class="lang-content lang-zh">Dataguise · Fremont</span>
+                      <span class="lang-content lang-en">Dataguise · Fremont</span>
+                    </p>
+                    <h4>
+                      <span class="lang-content lang-zh">软件工程师 / Scrum Master / 维护工程师</span>
+                      <span class="lang-content lang-en">Software Engineer / Scrum Master / Sustaining Engineer</span>
+                    </h4>
+                    <p>
+                      <span class="lang-content lang-zh">参与 Hadoop 应用、数据安全、GDPR、敏感数据保护、产品维护、on-call 和 Scrum 协作，建立了对企业级数据系统和团队交付节奏的早期理解。</span>
+                      <span class="lang-content lang-en">Worked on Hadoop applications, data security, GDPR, sensitive data protection, product sustaining, on-call, and Scrum collaboration, building an early understanding of enterprise data systems and team delivery rhythm.</span>
+                    </p>
+                    <div class="chip-row">
+                      <span>Java</span>
+                      <span>Hadoop</span>
+                      <span>Data Security</span>
+                      <span>Agile</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="career-group education-group">
+              <p class="career-group-label">
+                <span class="lang-content lang-zh">教育背景</span>
+                <span class="lang-content lang-en">Education</span>
+              </p>
+              <div class="education-grid">
+                <article class="education-item">
+                  <span>2013 - 2015</span>
+                  <h4>SUNY Binghamton University</h4>
+                  <p>Master of EECE</p>
+                </article>
+                <article class="education-item">
+                  <span>2009 - 2013</span>
+                  <h4>
+                    <span class="lang-content lang-zh">北京邮电大学</span>
+                    <span class="lang-content lang-en">Beijing University of Posts and Telecommunications</span>
+                  </h4>
+                  <p>
+                    <span class="lang-content lang-zh">通信工程本科</span>
+                    <span class="lang-content lang-en">B.S. in Communication Engineering</span>
+                  </p>
+                </article>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section id="projects" class="section projects-only">
-          <div class="project-grid">
-            <a class="project-card featured image-card card-whole-link" href="./project-about.html" aria-label="Open About Me project">
-              <span class="card-image-link">
-                <img src="./assets/about-pixel.png" alt="Pixel-styled portrait for the About Me project" />
-              </span>
-              <span class="project-meta">Project 0</span>
-              <h3>About Me</h3>
+        <section class="section card-section">
+          <div class="section-heading">
+            <p class="section-tag">
+              <span class="lang-content lang-zh">当前计划</span>
+              <span class="lang-content lang-en">Current plan</span>
+            </p>
+            <h2>
+              <span class="lang-content lang-zh">我希望加入拥抱 AI 的公司，成为新时代的一部分。</span>
+              <span class="lang-content lang-en">I want to join companies embracing AI and become part of the new era.</span>
+            </h2>
+          </div>
+          <div class="content-grid">
+            <article class="content-card accent-blue">
+              <h3>
+                <span class="lang-content lang-zh">专业能力</span>
+                <span class="lang-content lang-en">Professional capability</span>
+              </h3>
               <p>
-                A short introduction to who I am, what I care about, and what I
-                want this site to become.
+                <span class="lang-content lang-zh">我理解数据平台、云服务、分布式执行系统，也持续跟进 AI 从 prompt 到 workflow、agent 的演进。技术对我不是黑盒，而是可以被快速学习、拆解、评估并转化为产品机会的基础。</span>
+                <span class="lang-content lang-en">I understand data platforms, cloud services, and distributed execution systems, while actively following AI's evolution from prompts to workflows and agents. Technology is not a black box to me; it is something I can quickly learn, break down, evaluate, and turn into product opportunities.</span>
               </p>
-            </a>
+            </article>
+            <article class="content-card accent-green">
+              <h3>
+                <span class="lang-content lang-zh">核心竞争力</span>
+                <span class="lang-content lang-en">Core strengths</span>
+              </h3>
+              <p>
+                <span class="lang-content lang-zh">懂技术，懂 AI；懂产品，会组织。我的经历证明我能快速适应新环境和新问题，在变化中找到边界、优先级和落地点，并推动跨团队协作向结果收敛。</span>
+                <span class="lang-content lang-en">I understand technology and AI; I understand product and organization. My experience proves that I can adapt quickly to new environments and problems, find boundaries, priorities, and execution paths in change, and drive cross-team work toward outcomes.</span>
+              </p>
+            </article>
+            <article class="content-card accent-orange">
+              <h3>
+                <span class="lang-content lang-zh">为公司带来的价值</span>
+                <span class="lang-content lang-en">Value I bring</span>
+              </h3>
+              <p>
+                <span class="lang-content lang-zh">AI 时代凡事都很快，我的价值在于能拥抱变化、迅速捕捉关键信息，并识别真正的问题和决策点。我希望帮助公司把 AI 和平台能力落到具体场景里，形成更快的执行、更清晰的判断和可衡量的业务影响。</span>
+                <span class="lang-content lang-en">In the AI era, everything moves fast. My value is the ability to embrace change, quickly capture key signals, and identify the real problem and decision point. I want to help teams apply AI and platform capabilities to concrete scenarios, creating faster execution, clearer judgment, and measurable business impact.</span>
+              </p>
+            </article>
+          </div>
+        </section>
 
-            <a class="project-card image-card card-whole-link" href="./project-ai-workflows.html" aria-label="Open AI Workflows project">
-              <span class="card-image-link">
-                <img src="./assets/ai-workflows-visual.svg" alt="Abstract workflow illustration for the AI teaching project" />
-              </span>
-              <span class="project-meta">Project 1</span>
-              <h3>AI Workflows for Research and Presentations</h3>
-              <p>
-                A teaching project for teenagers about moving from good source
-                material to structured summaries and presentation outlines.
-              </p>
+        <section class="section contact-section" id="contact">
+          <div>
+            <p class="section-tag">
+              <span class="lang-content lang-zh">Contact</span>
+              <span class="lang-content lang-en">Contact</span>
+            </p>
+            <h2>
+              <span class="lang-content lang-zh">如果你想更了解我，可以从这里开始。</span>
+              <span class="lang-content lang-en">If you want to know more about me, start here.</span>
+            </h2>
+          </div>
+          <div class="contact-card">
+            <button class="button primary" type="button" data-email-button data-user="marshall.yang.zhang" data-domain="outlook.com">
+              <span class="lang-content lang-zh">显示邮箱</span>
+              <span class="lang-content lang-en">Show email</span>
+            </button>
+            <a class="button secondary" href="./assets/resume/marshall-zhang-resume.pdf" target="_blank" rel="noopener">
+              <span class="lang-content lang-zh">查看简历</span>
+              <span class="lang-content lang-en">View resume</span>
             </a>
           </div>
         </section>
       </main>
     </div>
+    <script src="./site.js"></script>
   </body>
 </html>
