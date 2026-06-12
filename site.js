@@ -1,5 +1,6 @@
 const languageToggle = document.querySelector("[data-language-toggle]");
 const emailButton = document.querySelector("[data-email-button]");
+const resumeLink = document.querySelector("[data-resume-link]");
 
 function getInitialLanguage() {
   const params = new URLSearchParams(window.location.search);
@@ -18,6 +19,13 @@ function setLanguage(language) {
   if (languageToggle) {
     languageToggle.textContent = language === "en" ? "中文" : "English";
     languageToggle.dataset.currentLanguage = language;
+  }
+
+  if (resumeLink) {
+    const resumeHref = language === "en" ? resumeLink.dataset.resumeEn : resumeLink.dataset.resumeZh;
+    if (resumeHref) {
+      resumeLink.href = resumeHref;
+    }
   }
 
   const url = new URL(window.location.href);
