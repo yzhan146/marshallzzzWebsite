@@ -498,6 +498,19 @@ h3 {
   padding: 18px;
 }
 
+.side-project-item {
+  background: linear-gradient(180deg, #ffffff 0%, var(--blue-soft) 100%);
+}
+
+.side-project-actions {
+  margin-top: 16px;
+}
+
+.side-project-actions .button {
+  min-height: 42px;
+  padding: 10px 14px;
+}
+
 .education-item > span {
   color: var(--orange);
   display: block;
