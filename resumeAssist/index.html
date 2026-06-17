@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简历修改建议 — Marshall Zhang</title>
+    <meta
+      name="description"
+      content="Resume Assist helps compare up to 10 job descriptions against your resume and gives success-probability ranking plus resume improvement suggestions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .assist-hero {
+        padding: 46px 0 26px;
+      }
+
+      .assist-layout,
+      .assist-results {
+        display: grid;
+        gap: 18px;
+      }
+
+      .assist-panel {
+        background: rgba(255, 255, 255, 0.84);
+        border: 1px solid rgba(221, 227, 221, 0.9);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+
+      .assist-panel + .assist-panel {
+        margin-top: 18px;
+      }
+
+      .assist-label {
+        color: var(--muted);
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        margin: 18px 0 8px;
+        text-transform: uppercase;
+      }
+
+      .assist-label .required {
+        color: #b42318;
+      }
+
+      .assist-optional {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+
+      .assist-input,
+      .assist-textarea {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        color: var(--text);
+        font: inherit;
+        padding: 13px 15px;
+        width: 100%;
+      }
+
+      .assist-textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .assist-hint,
+      .assist-status {
+        background: var(--surface-soft);
+        border-radius: 18px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-top: 12px;
+        padding: 12px 14px;
+      }
+
+      .assist-status.error {
+        background: #fff1f0;
+        color: #b42318;
+        font-weight: 800;
+      }
+
+      .assist-status.success {
+        background: var(--green-soft);
+        color: #276749;
+        font-weight: 800;
+      }
+
+      .assist-row {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .assist-actions,
+      .assist-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .assist-chip {
+        background: var(--surface-soft);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 800;
+        padding: 7px 11px;
+      }
+
+      .assist-jd-item,
+      .assist-job-card,
+      .assist-advice-card {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 18px;
+      }
+
+      .assist-jd-item {
+        align-items: center;
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+
+      .assist-score {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        display: inline-flex;
+        font-weight: 900;
+        padding: 8px 12px;
+      }
+
+      .assist-score.strong {
+        color: #0f8a5f;
+      }
+
+      .assist-score.medium {
+        color: #a16207;
+      }
+
+      .assist-score.low {
+        color: #b42318;
+      }
+
+      .assist-result-grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: minmax(280px, 0.9fr) minmax(380px, 1.1fr);
+      }
+
+      .assist-metrics {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 18px;
+      }
+
+      .assist-metric {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 16px;
+      }
+
+      .assist-metric strong {
+        display: block;
+        font-size: 1.8rem;
+        letter-spacing: -0.05em;
+      }
+
+      .assist-job-card,
+      .assist-advice-card {
+        margin-top: 12px;
+      }
+
+      .assist-job-card h3,
+      .assist-advice-card h3 {
+        margin-bottom: 4px;
+      }
+
+      .assist-advice-card ul,
+      .assist-job-card ul {
+        color: var(--muted);
+        line-height: 1.7;
+        margin-bottom: 0;
+      }
+
+      .assist-empty {
+        border: 1px dashed var(--line);
+        border-radius: 24px;
+        color: var(--muted);
+        display: grid;
+        min-height: 160px;
+        padding: 28px;
+        place-items: center;
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .assist-row,
+        .assist-result-grid,
+        .assist-metrics {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="../index.html" aria-label="Marshall Zhang home">
+          <span class="brand-mark">MZ</span>
+          <span>marshallzzz.com</span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="assist-hero">
+          <a class="back-link" href="../index.html">← Back to home</a>
+          <p class="eyebrow">Resume Assist</p>
+          <h1>简历修改建议</h1>
+          <p class="subtitle">
+            上传简历文件，提交最多 10 个 JD，本页会按成功率排序，并为每个 JD 给出简历修改建议。当前公开页面使用浏览器本地逻辑，不上传你的数据，也不会暴露 API key。
+          </p>
+        </section>
+
+        <section class="assist-panel">
+          <h2>1. Profile Setup</h2>
+          <p>只有 Resume File 必填；Resume text、个人网站和 GitHub 都是可选补充。</p>
+
+          <label class="assist-label" for="resumeFile">Resume file <span class="required">*</span></label>
+          <input class="assist-input" id="resumeFile" type="file" accept=".txt,.md,.csv,.json,.pdf,.doc,.docx" />
+          <div class="assist-hint" id="resumeFileStatus">Required. PDF/DOC files satisfy the upload requirement; text-like files can also be read locally for better matching.</div>
+
+          <label class="assist-label" for="resumeText">Resume text <span class="assist-optional">optional supplement</span></label>
+          <textarea class="assist-textarea" id="resumeText" placeholder="Optional: paste extra resume, project, or portfolio bullets here..."></textarea>
+
+          <div class="assist-row">
+            <div>
+              <label class="assist-label" for="websiteUrl">Personal website <span class="assist-optional">optional</span></label>
+              <input class="assist-input" id="websiteUrl" placeholder="https://marshallzzz.com" />
+            </div>
+            <div>
+              <label class="assist-label" for="githubUrl">GitHub <span class="assist-optional">optional</span></label>
+              <input class="assist-input" id="githubUrl" placeholder="https://github.com/username" />
+            </div>
+          </div>
+        </section>
+
+        <section class="assist-panel">
+          <h2>2. JD Submission</h2>
+          <p>添加 1-10 个 JD。当前静态页面不做 URL 抓取；如只提供 URL，请同时手动粘贴 JD 标题和内容。</p>
+
+          <label class="assist-label" for="jobTitle">JD title</label>
+          <input class="assist-input" id="jobTitle" placeholder="AI Product Manager" />
+
+          <div class="assist-row">
+            <div>
+              <label class="assist-label" for="company">Company</label>
+              <input class="assist-input" id="company" placeholder="Company" />
+            </div>
+            <div>
+              <label class="assist-label" for="location">Location</label>
+              <input class="assist-input" id="location" placeholder="Beijing / Remote" />
+            </div>
+          </div>
+
+          <label class="assist-label" for="jobUrl">JD URL <span class="assist-optional">optional reference</span></label>
+          <input class="assist-input" id="jobUrl" placeholder="https://..." />
+
+          <label class="assist-label" for="jobDescription">JD text</label>
+          <textarea class="assist-textarea" id="jobDescription" placeholder="Paste responsibilities, requirements, skills, and product context..."></textarea>
+
+          <div class="assist-actions">
+            <button class="button secondary" type="button" onclick="addJob()">Add JD</button>
+            <button class="button secondary" type="button" onclick="loadSampleData()">Load sample data</button>
+            <button class="button secondary" type="button" onclick="clearAll()">Clear</button>
+          </div>
+          <div id="jdList"></div>
+          <div class="assist-actions">
+            <button class="button primary" type="button" onclick="analyzeBatch()">Analyze and rank JDs</button>
+            <span class="assist-status" id="status">Ready.</span>
+          </div>
+        </section>
+
+        <section class="assist-panel" id="dashboard" style="display: none;">
+          <h2>3. Ranking Dashboard</h2>
+          <p id="batchRecommendation"></p>
+          <div class="assist-metrics">
+            <div class="assist-metric"><span class="project-meta">Total JDs</span><strong id="metricTotal">0</strong></div>
+            <div class="assist-metric"><span class="project-meta">Average</span><strong id="metricAvg">0%</strong></div>
+            <div class="assist-metric"><span class="project-meta">Strong</span><strong id="metricStrong">0</strong></div>
+            <div class="assist-metric"><span class="project-meta">Top JD</span><strong id="metricTop">-</strong></div>
+          </div>
+        </section>
+
+        <section class="assist-result-grid">
+          <div class="assist-panel">
+            <h2>4. Job Shortlist</h2>
+            <p>Sorted by success probability, highest first.</p>
+            <div class="assist-empty" id="jobResults">Run an analysis to see ranked JD cards.</div>
+          </div>
+          <div class="assist-panel">
+            <h2>5. Resume Advice for Every JD</h2>
+            <p>每个 JD 都会生成独立的简历修改建议，而不是只给 Top JD。</p>
+            <div class="assist-empty" id="jobDetail">Run an analysis to see resume advice for every JD.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const state = {
+        resumeFileName: "",
+        jobs: [],
+        analyses: [],
+      };
+
+      document.getElementById("resumeFile").addEventListener("change", async (event) => {
+        const file = event.target.files?.[0];
+        if (!file) return;
+
+        state.resumeFileName = file.name;
+        document.getElementById("resumeFileStatus").textContent = `Resume file selected: ${file.name}`;
+
+        if (file.type && !file.type.startsWith("text") && !file.name.match(/\.(txt|md|csv|json)$/i)) {
+          setStatus(`Resume file selected: ${file.name}. PDF/DOC parsing is not available in this static page, so optional resume text can improve analysis quality.`, "warning");
+          return;
+        }
+
+        try {
+          document.getElementById("resumeText").value = await file.text();
+          setStatus(`Loaded resume text from ${file.name}.`, "success");
+        } catch {
+          setStatus(`Resume file selected: ${file.name}. Could not read text, but upload requirement is satisfied.`, "warning");
+        }
+      });
+
+      function addJob() {
+        if (state.jobs.length >= 10) {
+          setStatus("You can submit at most 10 JDs in one batch.", "error");
+          return;
+        }
+
+        const job = readDraftJob();
+        if (!job.title || !job.description) {
+          setStatus("Please fill JD title and JD text. URL is optional reference only on this static page.", "error");
+          return;
+        }
+
+        state.jobs.push(job);
+        clearJobForm();
+        renderJobList();
+        setStatus(`Added JD ${state.jobs.length} / 10.`, "success");
+      }
+
+      function removeJob(index) {
+        state.jobs.splice(index, 1);
+        renderJobList();
+      }
+
+      function analyzeBatch() {
+        if (!state.resumeFileName) {
+          setStatus("Resume File is required. Other profile fields are optional.", "error");
+          return;
+        }
+
+        const draft = readDraftJob();
+        const hasDraft = draft.title || draft.company || draft.location || draft.url || draft.description;
+        if (hasDraft) {
+          if (!draft.title || !draft.description) {
+            setStatus("The current JD draft needs JD title and JD text before analysis.", "error");
+            return;
+          }
+          if (state.jobs.length >= 10) {
+            setStatus("You already have 10 JDs. Remove one before analyzing the current draft.", "error");
+            return;
+          }
+          state.jobs.push(draft);
+          clearJobForm();
+          renderJobList();
+        }
+
+        if (state.jobs.length < 1 || state.jobs.length > 10) {
+          setStatus("Add between 1 and 10 JDs before analyzing.", "error");
+          return;
+        }
+
+        const profileText = [
+          state.resumeFileName,
+          readInput("resumeText"),
+          readInput("websiteUrl"),
+          readInput("githubUrl"),
+        ].join("\n").toLowerCase();
+
+        state.analyses = state.jobs
+          .map((job, index) => analyzeOneJob(job, index, profileText))
+          .sort((a, b) => b.successProbability - a.successProbability)
+          .map((item, index) => ({ ...item, rank: index + 1 }));
+
+        renderDashboard();
+        renderResults();
+        renderAdvice();
+        setStatus("Analysis complete. Ranked by success probability.", "success");
+      }
+
+      function analyzeOneJob(job, index, profileText) {
+        const jdText = `${job.title}\n${job.company}\n${job.location}\n${job.description}`.toLowerCase();
+        const aiTerms = findTerms(jdText, ["ai", "llm", "rag", "agent", "copilot", "prompt", "mcp", "model", "chatbot"]);
+        const productTerms = findTerms(jdText, ["product", "roadmap", "user research", "strategy", "market", "\u4ea7\u54c1", "\u9700\u6c42"]);
+        const skillTerms = findTerms(jdText, ["typescript", "javascript", "python", "sql", "react", "node", "api", "data", "analytics", "function calling"]);
+        const riskTerms = findTerms(jdText, ["996", "fast-paced", "high pressure", "\u52a0\u73ed", "\u6297\u538b", "on-call"]);
+
+        const matchedAi = aiTerms.filter((term) => profileText.includes(term));
+        const matchedProduct = productTerms.filter((term) => profileText.includes(term));
+        const matchedSkills = skillTerms.filter((term) => profileText.includes(term));
+        const missingSkills = skillTerms.filter((term) => !profileText.includes(term)).slice(0, 5);
+        const hasEnglish = /english|英语|global|international/i.test(profileText);
+        const wantsEnglish = /english|英语|global|international|海外/i.test(jdText);
+        const hasBeijing = /beijing|\u5317\u4eac/i.test(jdText);
+
+        let score = 38;
+        score += Math.min(24, matchedAi.length * 8);
+        score += Math.min(18, matchedProduct.length * 6);
+        score += Math.min(18, matchedSkills.length * 5);
+        score += hasEnglish && wantsEnglish ? 8 : 0;
+        score += hasBeijing ? 4 : 0;
+        score -= Math.min(12, missingSkills.length * 3);
+        score -= Math.min(10, riskTerms.length * 5);
+        score = Math.max(12, Math.min(96, Math.round(score)));
+
+        const level = score >= 75 ? "Strong" : score >= 55 ? "Medium" : "Low";
+        const rankingReasons = buildReasons({ matchedAi, matchedProduct, matchedSkills, missingSkills, riskTerms, hasEnglish, wantsEnglish, hasBeijing });
+
+        return {
+          rank: index + 1,
+          title: job.title,
+          company: job.company || "Unknown company",
+          location: job.location || "Unknown location",
+          successProbability: score,
+          level,
+          rankingReasons,
+          matchedSkills,
+          missingSkills,
+          risks: riskTerms.length ? riskTerms.map((term) => `JD mentions ${term}; review workload and expectation risk.`) : ["No obvious workload risk keywords detected."],
+          resumeImprovements: buildResumeAdvice({ matchedAi, matchedProduct, matchedSkills, missingSkills, title: job.title }),
+          interviewTalkingPoints: buildTalkingPoints({ matchedAi, matchedProduct, matchedSkills, title: job.title }),
+        };
+      }
+
+      function buildReasons({ matchedAi, matchedProduct, matchedSkills, missingSkills, riskTerms, hasEnglish, wantsEnglish, hasBeijing }) {
+        const reasons = [];
+        if (matchedAi.length) reasons.push(`AI fit is supported by ${matchedAi.slice(0, 3).join(", ")}.`);
+        if (matchedProduct.length) reasons.push(`Product background matches ${matchedProduct.slice(0, 3).join(", ")} requirements.`);
+        if (matchedSkills.length) reasons.push(`Skill overlap includes ${matchedSkills.slice(0, 4).join(", ")}.`);
+        if (hasEnglish && wantsEnglish) reasons.push("English/global experience can be used as a differentiator.");
+        if (hasBeijing) reasons.push("Location appears compatible with Beijing-focused job search.");
+        if (missingSkills.length) reasons.push(`Main gaps to address: ${missingSkills.slice(0, 3).join(", ")}.`);
+        if (riskTerms.length) reasons.push(`Risk keywords detected: ${riskTerms.join(", ")}.`);
+        return reasons.slice(0, 5);
+      }
+
+      function buildResumeAdvice({ matchedAi, matchedProduct, matchedSkills, missingSkills, title }) {
+        const suggestions = [];
+        if (matchedAi.length) suggestions.push(`Move AI project experience closer to the top and explicitly mention ${matchedAi.slice(0, 3).join(", ")} for ${title}.`);
+        if (matchedProduct.length) suggestions.push(`Rewrite product experience bullets around ${matchedProduct.slice(0, 3).join(", ")} outcomes, not just responsibilities.`);
+        if (matchedSkills.length) suggestions.push(`Add a skills line that highlights ${matchedSkills.slice(0, 4).join(", ")} because the JD asks for them directly.`);
+        if (missingSkills.length) suggestions.push(`If truthful, add evidence for ${missingSkills.slice(0, 3).join(", ")}; otherwise prepare an interview explanation instead of overstating.`);
+        suggestions.push("Use JD language naturally in resume bullets so recruiter screening can connect your background to the role.");
+        return suggestions.slice(0, 5);
+      }
+
+      function buildTalkingPoints({ matchedAi, matchedProduct, matchedSkills, title }) {
+        const points = [];
+        if (matchedAi.length) points.push(`Explain how you used ${matchedAi.slice(0, 2).join(" and ")} in a practical product workflow.`);
+        if (matchedProduct.length) points.push(`Prepare one product decision story for ${title}: user problem, tradeoff, metric, and outcome.`);
+        if (matchedSkills.length) points.push(`Connect engineering fluency (${matchedSkills.slice(0, 3).join(", ")}) to better AI product execution.`);
+        points.push("Be ready to explain how LLM output should be validated before execution.");
+        return points.slice(0, 4);
+      }
+
+      function renderDashboard() {
+        const total = state.analyses.length;
+        const avg = Math.round(state.analyses.reduce((sum, item) => sum + item.successProbability, 0) / total);
+        document.getElementById("dashboard").style.display = "block";
+        document.getElementById("batchRecommendation").textContent = `Prioritize ${state.analyses[0].title}; it has the highest success probability in this batch.`;
+        document.getElementById("metricTotal").textContent = total;
+        document.getElementById("metricAvg").textContent = `${avg}%`;
+        document.getElementById("metricStrong").textContent = state.analyses.filter((item) => item.level === "Strong").length;
+        document.getElementById("metricTop").textContent = state.analyses[0].title;
+      }
+
+      function renderResults() {
+        const container = document.getElementById("jobResults");
+        container.className = "";
+        container.innerHTML = state.analyses.map((job) => `
+          <article class="assist-job-card">
+            <div class="assist-actions" style="justify-content: space-between; margin-top: 0;">
+              <div>
+                <span class="assist-chip">#${job.rank} · ${escapeHtml(job.level)}</span>
+                <h3>${escapeHtml(job.title)}</h3>
+                <p>${escapeHtml(job.company)} · ${escapeHtml(job.location)}</p>
+              </div>
+              <span class="assist-score ${job.level.toLowerCase()}">${job.successProbability}%</span>
+            </div>
+            <ul>${job.rankingReasons.slice(0, 2).map((reason) => `<li>${escapeHtml(reason)}</li>`).join("")}</ul>
+          </article>
+        `).join("");
+      }
+
+      function renderAdvice() {
+        const container = document.getElementById("jobDetail");
+        container.className = "";
+        container.innerHTML = state.analyses.map((job) => `
+          <article class="assist-advice-card">
+            <div class="assist-actions" style="justify-content: space-between; margin-top: 0;">
+              <div>
+                <span class="assist-chip">Rank #${job.rank}</span>
+                <h3>${escapeHtml(job.title)}</h3>
+                <p>${escapeHtml(job.company)} · ${escapeHtml(job.location)}</p>
+              </div>
+              <span class="assist-score ${job.level.toLowerCase()}">${job.successProbability}%</span>
+            </div>
+            <h3>Resume improvement suggestions</h3>
+            <ul>${job.resumeImprovements.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+            <h3>Matched skills and gaps</h3>
+            <div class="assist-tags">
+              ${job.matchedSkills.length ? job.matchedSkills.map((skill) => `<span class="assist-chip">${escapeHtml(skill)}</span>`).join("") : '<span class="assist-chip">No direct skill matches detected</span>'}
+            </div>
+            <p><strong>Gaps:</strong> ${job.missingSkills.length ? job.missingSkills.map(escapeHtml).join(", ") : "No major gaps detected."}</p>
+            <h3>Interview talking points</h3>
+            <ul>${job.interviewTalkingPoints.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          </article>
+        `).join("");
+      }
+
+      function renderJobList() {
+        const list = document.getElementById("jdList");
+        list.innerHTML = state.jobs.map((job, index) => `
+          <div class="assist-jd-item">
+            <div>
+              <strong>${escapeHtml(job.title)}</strong>
+              <div class="project-meta" style="margin-bottom: 0;">${escapeHtml(job.company || "Unknown company")} · ${escapeHtml(job.location || "Unknown location")}</div>
+            </div>
+            <button class="button secondary" type="button" onclick="removeJob(${index})">Remove</button>
+          </div>
+        `).join("");
+      }
+
+      function loadSampleData() {
+        state.resumeFileName = "sample-resume.md";
+        document.getElementById("resumeFileStatus").textContent = "Sample resume file selected: sample-resume.md";
+        document.getElementById("resumeText").value = "AI product manager with engineering background. Built AI Job Search Copilot using LLM, RAG, function calling, MCP, TypeScript, JavaScript, React, Node, API design, SQL, prompt engineering, and agent approval workflows. Strong English communication from global company experience.";
+        document.getElementById("websiteUrl").value = "https://marshallzzz.com";
+        document.getElementById("githubUrl").value = "https://github.com/yzhan146/AIJobSearchCopilot";
+        state.jobs = [
+          { title: "AI Product Manager - LLM Platform", company: "Volcano Engine", location: "Beijing", url: "", description: "Own roadmap for LLM platform, RAG tooling, agent workflow, prompt engineering, API integrations, user research, and enterprise AI product strategy. English communication preferred." },
+          { title: "Growth Product Manager", company: "Consumer App", location: "Shanghai", url: "", description: "Responsible for growth strategy, funnel analytics, user lifecycle, and campaign operations. Fast-paced high pressure environment." },
+          { title: "AI Application Product Lead", company: "Startup", location: "Beijing", url: "", description: "Build chatbot and copilot products with LLM, agent orchestration, function calling, data analytics, customer discovery, and roadmap ownership." },
+        ];
+        renderJobList();
+        setStatus("Loaded sample resume and 3 JDs.", "success");
+      }
+
+      function clearAll() {
+        for (const id of ["resumeText", "websiteUrl", "githubUrl", "jobTitle", "company", "location", "jobUrl", "jobDescription"]) {
+          document.getElementById(id).value = "";
+        }
+        document.getElementById("resumeFile").value = "";
+        document.getElementById("resumeFileStatus").textContent = "Required. PDF/DOC files satisfy the upload requirement; text-like files can also be read locally for better matching.";
+        state.resumeFileName = "";
+        state.jobs = [];
+        state.analyses = [];
+        renderJobList();
+        document.getElementById("dashboard").style.display = "none";
+        document.getElementById("jobResults").className = "assist-empty";
+        document.getElementById("jobResults").textContent = "Run an analysis to see ranked JD cards.";
+        document.getElementById("jobDetail").className = "assist-empty";
+        document.getElementById("jobDetail").textContent = "Run an analysis to see resume advice for every JD.";
+        setStatus("Cleared local state.");
+      }
+
+      function clearJobForm() {
+        for (const id of ["jobTitle", "company", "location", "jobUrl", "jobDescription"]) {
+          document.getElementById(id).value = "";
+        }
+      }
+
+      function readDraftJob() {
+        return {
+          title: readInput("jobTitle"),
+          company: readInput("company"),
+          location: readInput("location"),
+          url: readInput("jobUrl"),
+          description: readInput("jobDescription"),
+        };
+      }
+
+      function readInput(id) {
+        return document.getElementById(id).value.trim();
+      }
+
+      function findTerms(text, terms) {
+        return terms.filter((term) => text.includes(term.toLowerCase()));
+      }
+
+      function setStatus(message, type = "info") {
+        const status = document.getElementById("status");
+        status.textContent = message;
+        status.className = `assist-status ${type}`;
+      }
+
+      function escapeHtml(value) {
+        return String(value ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+    </script>
+  </body>
+</html>
