@@ -1,6 +1,8 @@
 const languageToggle = document.querySelector("[data-language-toggle]");
 const emailButton = document.querySelector("[data-email-button]");
 const resumeLink = document.querySelector("[data-resume-link]");
+const careerTabs = Array.from(document.querySelectorAll("[data-career-tab]"));
+const careerPanels = Array.from(document.querySelectorAll("[data-career-panel]"));
 
 function getInitialLanguage() {
   const params = new URLSearchParams(window.location.search);
@@ -40,6 +42,26 @@ function setLanguage(language) {
 languageToggle?.addEventListener("click", () => {
   const nextLanguage = languageToggle.dataset.currentLanguage === "en" ? "zh" : "en";
   setLanguage(nextLanguage);
+});
+
+function setCareerTab(targetTab) {
+  careerTabs.forEach((tab) => {
+    const isActive = tab.dataset.careerTab === targetTab;
+    tab.classList.toggle("is-active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+  });
+
+  careerPanels.forEach((panel) => {
+    const isActive = panel.dataset.careerPanel === targetTab;
+    panel.classList.toggle("is-active", isActive);
+    panel.hidden = !isActive;
+  });
+}
+
+careerTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    setCareerTab(tab.dataset.careerTab);
+  });
 });
 
 emailButton?.addEventListener("click", () => {

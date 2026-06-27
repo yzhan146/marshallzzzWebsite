@@ -95,7 +95,19 @@
           </div>
 
           <div class="career-card" id="career">
-            <div class="career-intro">
+            <div class="career-tabs" role="tablist" aria-label="Career content sections">
+              <button class="career-tab is-active" id="career-path-tab" type="button" role="tab" aria-selected="true" aria-controls="career-path-panel" data-career-tab="path">
+                <span class="lang-content lang-zh">职业路径</span>
+                <span class="lang-content lang-en">Career Path</span>
+              </button>
+              <button class="career-tab" id="ai-project-tab" type="button" role="tab" aria-selected="false" aria-controls="ai-project-panel" data-career-tab="ai">
+                <span class="lang-content lang-zh">AI Project</span>
+                <span class="lang-content lang-en">AI Project</span>
+              </button>
+            </div>
+
+            <div class="career-tab-panel is-active" id="career-path-panel" role="tabpanel" aria-labelledby="career-path-tab" data-career-panel="path">
+              <div class="career-intro">
               <p class="project-meta">
                 <span class="lang-content lang-zh">职业路径</span>
                 <span class="lang-content lang-en">Career path</span>
@@ -112,9 +124,9 @@
                   My path started in Hadoop, data security, and infrastructure engineering, then moved into platform product work across Azure Synapse and Microsoft Fabric. Today I own Fabric Job Platform capabilities and explore how AI can create real value in workflow automation, intelligent monitoring, and product development productivity.
                 </span>
               </p>
-            </div>
+              </div>
 
-            <div class="career-group">
+              <div class="career-group">
               <p class="career-group-label">
                 <span class="lang-content lang-zh">工作经历</span>
                 <span class="lang-content lang-en">Experience</span>
@@ -268,12 +280,57 @@
                   </div>
                 </article>
               </div>
+              </div>
+
+              <div class="career-group education-group">
+                <p class="career-group-label">
+                  <span class="lang-content lang-zh">教育背景</span>
+                  <span class="lang-content lang-en">Education</span>
+                </p>
+                <div class="education-grid">
+                  <article class="education-item">
+                    <span>2013 - 2015</span>
+                    <h4>SUNY Binghamton University</h4>
+                    <p>
+                      <span class="lang-content lang-zh">电子与计算机工程硕士（M.S.）｜GPA 4.0</span>
+                      <span class="lang-content lang-en">Master of EECE | GPA 4.0</span>
+                    </p>
+                  </article>
+                  <article class="education-item">
+                    <span>2009 - 2013</span>
+                    <h4>
+                      <span class="lang-content lang-zh">北京邮电大学</span>
+                      <span class="lang-content lang-en">Beijing University of Posts and Telecommunications</span>
+                    </h4>
+                    <p>
+                      <span class="lang-content lang-zh">电子工程学士（B.S.）｜GPA 3.2</span>
+                      <span class="lang-content lang-en">BS of EE | GPA 3.2</span>
+                    </p>
+                  </article>
+                </div>
+              </div>
             </div>
 
-            <div class="career-group side-project-group">
+            <div class="career-tab-panel ai-project-panel" id="ai-project-panel" role="tabpanel" aria-labelledby="ai-project-tab" data-career-panel="ai" hidden>
+              <div class="ai-project-intro">
+                <p class="project-meta">
+                  <span class="lang-content lang-zh">AI Project</span>
+                  <span class="lang-content lang-en">AI Project</span>
+                </p>
+                <h3>
+                  <span class="lang-content lang-zh">用真实项目拆解 AI agent 的产品机会、工程边界和可靠性问题。</span>
+                  <span class="lang-content lang-en">Using hands-on projects to study AI agent product opportunities, engineering boundaries, and reliability patterns.</span>
+                </h3>
+                <p>
+                  <span class="lang-content lang-zh">这些项目不是单点 demo，而是我用来理解 AI 应用落地的实验场：从 RAG、eval set、Top-K、rerank，到 tool calling、human approval、agent harness 和工程化验证。</span>
+                  <span class="lang-content lang-en">These are not one-off demos; they are my learning lab for practical AI systems, spanning RAG, eval sets, Top-K retrieval, reranking, tool calling, human approval, agent harnesses, and engineering validation.</span>
+                </p>
+              </div>
+
+              <div class="career-group side-project-group">
               <p class="career-group-label">
-                <span class="lang-content lang-zh">Side Project</span>
-                <span class="lang-content lang-en">Side Project</span>
+                <span class="lang-content lang-zh">AI Project</span>
+                <span class="lang-content lang-en">AI Project</span>
               </p>
 
               <div class="side-project-stack">
@@ -284,15 +341,15 @@
                     <span class="lang-content lang-en">AI Job Search Copilot / Resume Assist</span>
                   </h4>
                   <p>
-                    <span class="lang-content lang-zh">一个面向求职场景的 AI 应用：用户上传简历并提交最多 10 个 JD，系统按成功率排序，并为每个 JD 输出简历修改建议。</span>
-                    <span class="lang-content lang-en">An AI application for job search: users upload a resume and submit up to 10 JDs, then receive success-probability rankings and resume improvement suggestions for each JD.</span>
+                    <span class="lang-content lang-zh">一次完整的 AI agent 实操：把“针对 JD 改写简历、提前准备面试问题”的求职痛点，拆成结构化 JD 解析、候选人画像 RAG、Top-K 证据召回、eval set 验证、工具调用轨迹和人工确认边界。</span>
+                    <span class="lang-content lang-en">A hands-on AI agent project inspired by a real job-search pain point: tailoring resumes to each JD and preparing likely interview questions in advance. It breaks the workflow into structured JD extraction, profile RAG, Top-K evidence retrieval, eval-set validation, tool-call tracing, and human approval boundaries.</span>
                   </p>
                   <div class="chip-row">
-                    <span>LLM</span>
                     <span>RAG</span>
+                    <span>Eval Set</span>
+                    <span>Top-K Retrieval</span>
                     <span>Tool Calling</span>
                     <span>Human Approval</span>
-                    <span>Resume Assist</span>
                   </div>
                   <div class="side-project-actions">
                     <a class="button secondary" href="./resumeAssist/">
@@ -309,45 +366,19 @@
                     <span class="lang-content lang-en">AI Coding Agent Source Study / Copilot & Codex</span>
                   </h4>
                   <p>
-                    <span class="lang-content lang-zh">围绕 GitHub Copilot 与 OpenAI Codex 的工程实现进行源码与架构拆解，重点关注上下文构建、工具调用、权限边界、交互体验和 agent 在真实开发工作流中的产品机制。</span>
-                    <span class="lang-content lang-en">A source and architecture study of GitHub Copilot and OpenAI Codex, focused on context construction, tool calling, permission boundaries, interaction design, and how coding agents fit into real developer workflows.</span>
+                    <span class="lang-content lang-zh">系统阅读 GitHub Copilot 与 OpenAI Codex 的源码与实现细节，理解世界级 coding agent 如何处理工程问题：上下文构建、工具调用、权限与沙箱、harness 设计、交互循环，以及如何把不确定的模型能力约束进可靠的开发工作流。</span>
+                    <span class="lang-content lang-en">A source-level study of GitHub Copilot and OpenAI Codex to understand how top-tier coding agents handle real engineering work: context construction, tool calling, permissions and sandboxing, harness design, interaction loops, and ways to constrain uncertain model behavior inside reliable developer workflows.</span>
                   </p>
                   <div class="chip-row">
                     <span>GitHub Copilot</span>
                     <span>OpenAI Codex</span>
+                    <span>Agent Harness</span>
                     <span>Agent UX</span>
                     <span>Tool Calling</span>
-                    <span>Developer Workflow</span>
+                    <span>Sandboxing</span>
                   </div>
                 </article>
               </div>
-            </div>
-
-            <div class="career-group education-group">
-              <p class="career-group-label">
-                <span class="lang-content lang-zh">教育背景</span>
-                <span class="lang-content lang-en">Education</span>
-              </p>
-              <div class="education-grid">
-                <article class="education-item">
-                  <span>2013 - 2015</span>
-                  <h4>SUNY Binghamton University</h4>
-                  <p>
-                    <span class="lang-content lang-zh">电子与计算机工程硕士（M.S.）｜GPA 4.0</span>
-                    <span class="lang-content lang-en">Master of EECE | GPA 4.0</span>
-                  </p>
-                </article>
-                <article class="education-item">
-                  <span>2009 - 2013</span>
-                  <h4>
-                    <span class="lang-content lang-zh">北京邮电大学</span>
-                    <span class="lang-content lang-en">Beijing University of Posts and Telecommunications</span>
-                  </h4>
-                  <p>
-                    <span class="lang-content lang-zh">电子工程学士（B.S.）｜GPA 3.2</span>
-                    <span class="lang-content lang-en">BS of EE | GPA 3.2</span>
-                  </p>
-                </article>
               </div>
             </div>
           </div>
