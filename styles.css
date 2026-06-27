@@ -498,8 +498,17 @@ h3 {
   padding: 18px;
 }
 
+.side-project-stack {
+  display: grid;
+  gap: 14px;
+}
+
 .side-project-item {
   background: linear-gradient(180deg, #ffffff 0%, var(--blue-soft) 100%);
+}
+
+.source-study-item {
+  background: linear-gradient(180deg, #ffffff 0%, var(--green-soft) 100%);
 }
 
 .side-project-actions {
